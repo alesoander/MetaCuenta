@@ -111,8 +111,8 @@
           <figure>
             <img
               alt="Ejemplo: Crear negocio y completar información"
-              src="https://drive.google.com/uc?export=view&id=1O44kC2Z1NwlTDyREV2PikZyp_L_uEhUb"
-              onerror="this.onerror=null; this.src='https://drive.google.com/file/d/1O44kC2Z1NwlTDyREV2PikZyp_L_uEhUb/preview';"
+              src="https://lh3.googleusercontent.com/d/1O44kC2Z1NwlTDyREV2PikZyp_L_uEhUb"
+              onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/1O44kC2Z1NwlTDyREV2PikZyp_L_uEhUb';"
             />
             <figcaption>Imagen de referencia: creación de negocio.</figcaption>
           </figure>
@@ -136,8 +136,8 @@
           <figure>
             <img
               alt="Ejemplo: Menú para crear un nuevo portafolio"
-              src="https://drive.google.com/uc?export=view&id=12cz69Afy778TKu6RzFOiOlyZEPpIXmdR"
-              onerror="this.onerror=null; this.src='https://drive.google.com/file/d/12cz69Afy778TKu6RzFOiOlyZEPpIXmdR/preview';"
+              src="https://lh3.googleusercontent.com/d/12AGCbQeYkpu-Nw0sfMPtCL0UMFKeRkBq"
+              onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/12AGCbQeYkpu-Nw0sfMPtCL0UMFKeRkBq';"
             />
             <figcaption>Imagen de referencia: crear nuevo portafolio.</figcaption>
           </figure>
@@ -165,8 +165,8 @@
           <figure>
             <img
               alt="Ejemplo: Formulario de creación del portafolio"
-              src="https://drive.google.com/uc?export=view&id=12AGCbQeYkpu-Nw0sfMPtCL0UMFKeRkBq"
-              onerror="this.onerror=null; this.src='https://drive.google.com/file/d/12AGCbQeYkpu-Nw0sfMPtCL0UMFKeRkBq/preview';"
+              src="https://lh3.googleusercontent.com/d/12cz69Afy778TKu6RzFOiOlyZEPpIXmdR"
+              onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/12cz69Afy778TKu6RzFOiOlyZEPpIXmdR';"
             />
             <figcaption>Imagen de referencia: datos del portafolio.</figcaption>
           </figure>
@@ -189,8 +189,8 @@
           <figure>
             <img
               alt="Ejemplo: Invitar personas por email"
-              src="https://drive.google.com/uc?export=view&id=1p5GRH4-agB8nnmmM30Bg1anDAcMDH1NL"
-              onerror="this.onerror=null; this.src='https://drive.google.com/file/d/1p5GRH4-agB8nnmmM30Bg1anDAcMDH1NL/preview';"
+              src="https://lh3.googleusercontent.com/d/1p5GRH4-agB8nnmmM30Bg1anDAcMDH1NL"
+              onerror="https://lh3.googleusercontent.com/d/1p5GRH4-agB8nnmmM30Bg1anDAcMDH1NL';"
             />
             <figcaption>Imagen de referencia: invitación de personas (opcional).</figcaption>
           </figure>
@@ -212,8 +212,7 @@
 
       <!-- Nota sobre imágenes -->
       <p class="drive-note">
-        <strong>Nota sobre imágenes de Drive:</strong> si alguna imagen no carga, revisa que el archivo esté compartido como
-        "Cualquier persona con el enlace puede ver". La guía intenta cargar por <code>uc?export=view</code> y si falla usa <code>/preview</code>.
+        <strong>Nota sobre imágenes de Drive:</strong> En caso de no poder realizar la correcta configuración por favor contacta a soporte .
       </p>
 
     </main>
@@ -237,6 +236,83 @@
     </aside>
 
   </div><!-- /.page-body -->
-
+<div id="wespeak-whatsapp-button">
+  <div
+    id="wapp-button"
+    style="
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      height: auto;
+      overflow: hidden;
+      visibility: visible;
+      z-index: 99999999;
+      background: transparent;
+      border: 0px;
+      transition: transform 0.2s ease-in-out;
+      backface-visibility: hidden;
+    "
+  >
+    <a id="whatsapp-message" target="_blank" href="https://api.whatsapp.com/send?phone=5493446645873&text=Hola%20necesito%20ayuda%20para%20configurar%20mi%20cuenta%20de%20Meta&context=advertisingcode&source_url=https%3A%2F%2Fejemplo.com">
+      <picture>
+        <!-- Mobile image (max-width: 480px) -->
+          <source
+            media="(max-width: 480px)"
+            srcset="https://d2txcta0d7tijy.cloudfront.net/wespeak/whatsapp.png"
+          />
+          <!-- Tablet image (max-width: 1024px) -->
+          <source
+            media="(max-width: 1024px)"
+            srcset="https://d2txcta0d7tijy.cloudfront.net/wespeak/whatsapp.png"
+          />
+          <!-- Default/desktop image -->
+          <img
+            src="https://d2txcta0d7tijy.cloudfront.net/wespeak/right.png"
+            alt="botão do whatsapp"
+          />
+      </picture>
+    </a>
+  </div>
+  <style>
+    /* Mobile sizes */
+    @media screen and (max-width: 480px) {
+      #wapp-button {
+        width: 80px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      #wapp-button img {
+        width: 80px;
+      }
+    }
+    
+    /* Tablet sizes */
+    @media screen and (min-width: 481px) and (max-width: 1024px) {
+      #wapp-button {
+        width: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+      #wapp-button img {
+        width: 80px;
+      }
+    }
+    /* Desktop sizes */
+    @media screen and (min-width: 1025px) {
+      #wapp-button {
+        width: 320px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      #wapp-button img {
+        width: 320px;
+      }
+    }
+  </style>
+</div>
+  
 </body>
 </html>
