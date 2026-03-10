@@ -3,7 +3,7 @@
    Principal: #31085C (violeta oscuro)
    Fondo:     #FFFFFF (blanco)
    Texto:     #111111 (negro)
-   Acento:    #31085C10 (tinte suave para fondos)
+   Acento:    #f3eeff (tinte suave para fondos)
    ============================================================ */
 
 /* Reset & base */
@@ -23,9 +23,13 @@
   --color-gray-border:   #e0e0e0;
   --color-text:          #111111;
   --color-text-muted:    #555555;
+  --color-info-bg:       #eef4ff;
+  --color-info-border:   #c0d6f7;
+  --color-warn-bg:       #fff8e6;
+  --color-warn-border:   #f5d87a;
   --font-main: 'Segoe UI', Arial, sans-serif;
   --border-radius: 8px;
-  --max-width: 860px;
+  --max-width: 1100px;
 }
 
 html {
@@ -34,7 +38,7 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: var(--color-white);
+  background-color: var(--color-gray-light);
   color: var(--color-text);
   line-height: 1.6;
 }
@@ -54,219 +58,289 @@ a:hover {
 header {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.header-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
 }
 
-.logo-icon {
-  font-size: 1.6rem;
-}
-
-.logo-text {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.header-subtitle {
-  font-size: 0.95rem;
-  opacity: 0.85;
-}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero {
-  background-color: var(--color-primary-tint);
-  border-bottom: 3px solid var(--color-primary);
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.hero h1 {
-  font-size: 2.1rem;
+header h1 {
+  font-size: 1.9rem;
   font-weight: 800;
-  color: var(--color-primary);
+  line-height: 1.25;
   margin-bottom: 0.75rem;
 }
 
-.hero p {
-  font-size: 1.05rem;
-  color: var(--color-text);
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-}
-
-.btn-primary {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 0.75rem 2rem;
-  border-radius: var(--border-radius);
-  font-weight: 700;
-  text-decoration: none;
+.header-intro {
   font-size: 1rem;
-  transition: background-color 0.2s;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-primary-light);
-  color: var(--color-white);
+  opacity: 0.88;
+  max-width: 720px;
 }
 
 /* ============================================================
-   MAIN / STEPS
+   PAGE BODY (main + aside side by side)
    ============================================================ */
-main {
-  background-color: var(--color-white);
-  padding: 3rem 1.5rem;
-}
-
-.container {
+.page-body {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: start;
 }
 
-.section-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-primary);
+/* ============================================================
+   GUIDE (main steps area)
+   ============================================================ */
+.guide {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--color-gray-border);
 }
 
-/* Step card */
+/* Alert boxes */
+.alerts {
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.alert {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  border-left: 4px solid transparent;
+}
+
+.alert-info {
+  background-color: var(--color-info-bg);
+  border-left-color: var(--color-primary);
+}
+
+.alert-warning {
+  background-color: var(--color-warn-bg);
+  border-left-color: var(--color-warn-border);
+}
+
+/* Steps list */
+.steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Numbered step */
 .step {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.1rem;
   align-items: flex-start;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-border);
-  border-left: 5px solid var(--color-primary);
-  border-radius: var(--border-radius);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.25rem;
-  transition: box-shadow 0.2s;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-gray-border);
 }
 
-.step:hover {
-  box-shadow: 0 4px 16px rgba(49, 8, 92, 0.1);
+.step:last-of-type {
+  border-bottom: none;
 }
 
 .step-number {
   flex-shrink: 0;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   border-radius: 50%;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0.15rem;
 }
 
 .step-content h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-black);
-  margin-bottom: 0.35rem;
-}
-
-.step-content p {
-  font-size: 0.97rem;
-  color: var(--color-text);
-}
-
-/* ============================================================
-   TIPS SECTION
-   ============================================================ */
-.tips {
-  background-color: var(--color-gray-light);
-  padding: 3rem 1.5rem;
-  border-top: 1px solid var(--color-gray-border);
-}
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin-top: 0.5rem;
-}
-
-.tip-card {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-border);
-  border-top: 4px solid var(--color-primary);
-  border-radius: var(--border-radius);
-  padding: 1.5rem 1.25rem;
-  text-align: center;
-}
-
-.tip-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.tip-card h4 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 0.4rem;
 }
 
-.tip-card p {
-  font-size: 0.9rem;
+.step-content p {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.step-content ul {
+  margin: 0.5rem 0 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.step-content ul li {
+  margin-bottom: 0.25rem;
+}
+
+/* Image steps */
+.step-image {
+  padding: 1rem 0 1.25rem 3.3rem;
+  border-bottom: 1px solid var(--color-gray-border);
+}
+
+.step-image figure {
+  margin: 0;
+}
+
+.step-image img {
+  width: 100%;
+  max-width: 560px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray-border);
+  display: block;
+}
+
+.step-image figcaption {
+  font-size: 0.82rem;
   color: var(--color-text-muted);
+  margin-top: 0.4rem;
+}
+
+/* CTA link button */
+.btn-link {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  transition: background-color 0.2s;
+}
+
+.btn-link:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+/* Drive note */
+.drive-note {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-gray-light);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-gray-border);
+}
+
+.drive-note code {
+  background-color: var(--color-gray-border);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
 }
 
 /* ============================================================
-   FOOTER
+   ASIDE: CHECKLIST
    ============================================================ */
-footer {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 1.25rem 1.5rem;
-  text-align: center;
+.checklist-aside {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray-border);
+  border-top: 4px solid var(--color-primary);
+  padding: 1.5rem 1.25rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.checklist-aside h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
+}
+
+.checklist li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-gray-border);
+  font-size: 0.92rem;
+  color: var(--color-text);
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.tip-box {
+  background-color: var(--color-primary-tint);
+  border-radius: var(--border-radius);
+  padding: 0.85rem 1rem;
   font-size: 0.88rem;
-  opacity: 0.95;
+  color: var(--color-text);
+  border-left: 3px solid var(--color-primary);
 }
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .step {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .tips-grid {
+@media (max-width: 768px) {
+  .page-body {
     grid-template-columns: 1fr;
   }
+
+  .checklist-aside {
+    position: static;
+    order: -1;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .step-image {
+    padding-left: 0;
+  }
 }
+
+@media (max-width: 480px) {
+  .step {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .step-image {
+    padding-left: 0;
+  }
+}
+
